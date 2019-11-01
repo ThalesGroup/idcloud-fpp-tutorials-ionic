@@ -1,0 +1,52 @@
+syntax: glob
+# OSX Files
+.DS_Store
+# Xcode files
+xcuserdata/
+# Android temp files
+build/
+.gradle/
+.idea/
+*.iml
+local.properties
+# Libs
+*.so
+*.aar
+*.jar
+*.framework/
+# Face id assets
+*.ndf
+Frameworks
+*.orig
+*.swp
+
+# ionic
+syntax:glob
+
+# Project #
+
+# System #
+.DS_Store
+
+# Mercurial #
+*.orig
+*.swp
+
+.vscode/
+
+# Node #
+node_modules/
+
+# Grunt build #
+www/build
+plugins/
+platforms/
+.tmp/
+
+# Bower #
+bower_components/
+
+# IDE #
+nbproject/
+.idea/
+atlassian-ide-plugin.xml

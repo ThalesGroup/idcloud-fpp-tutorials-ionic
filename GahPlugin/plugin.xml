@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.gemalto.plugin.gah" version="0.2" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>GahPlugin</name>
+    <js-module name="GahPlugin" src="www/GahPlugin.js">
+        <clobbers target="GahPlugin" />
+    </js-module>
+
+        <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="GahPlugin">
+                <param name="ios-package" value="GahPlugin"/>
+            </feature>
+        </config-file>
+
+        <config-file parent="NSLocationWhenInUseUsageDescription" target="*-Info.plist">
+            <string>required this permission</string>
+        </config-file>
+      
+        <!-- Objective-C source code -->
+        <header-file src="src/ios/GahPlugin.h"/>
+        <source-file src="src/ios/GahPlugin.m"/>
+        <header-file src="src/ios/GAHRiskEngineIntegration.h"/>
+        <source-file src="src/ios/GAHRiskEngineIntegration.m"/>
+    
+        <!-- FPP SDK libraries -->
+        <framework src="src/ios/libs/debug/GAHRiskEngine.framework" embed="false" custom="true"/>
+        <!-- <framework src="src/ios/libs/release/GAHRiskEngine.framework" embed="false" custom="true"/> -->
+        
+    </platform>
+   
+    <!-- android -->
+    <platform name="android">
+
+        <!-- android permissions -->
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.BLUETOOTH"/>
+            <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+        </config-file>
+        
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="GahPlugin" >
+                <param name="android-package" value="com.gemalto.plugin.gah.GahPlugin"/>
+            </feature>
+        </config-file>
+
+        <!-- java source code -->
+        <source-file src="src/android/GahPlugin.java" target-dir="src/com/gemalto/plugin/gah" />
+        <source-file src="src/android/GAHRiskEngineIntegration.java" target-dir="src/com/gemalto/plugin/gah" />
+
+        <!-- gradle file -->
+        <framework src="src/android/gahBuild.gradle" custom="true" type="gradleReference" />
+
+        <!-- FPP SDK jar file -->
+        <resource-file src="src/android/libs/debug/GAHRiskEngine.jar" target="libs/debug/GAHRiskEngine.jar" />
+        <resource-file src="src/android/libs/release/GAHRiskEngine.jar" target="libs/release/GAHRiskEngine.jar" />
+
+        <!-- FPP SDK native libraries -->
+        <resource-file src="src/android/libs/debug/arm64-v8a/libLIB-v.3.7.0.so" target="libs/debug/arm64-v8a/libLIB-v.3.7.0.so" />
+        <resource-file src="src/android/libs/release/arm64-v8a/libLIB-v.3.7.0.so" target="libs/release/arm64-v8a/libLIB-v.3.7.0.so" />
+        <resource-file src="src/android/libs/debug/arm64-v8a/libmedlc_shared.so" target="libs/debug/arm64-v8a/libmedlc_shared.so" />
+        <resource-file src="src/android/libs/release/arm64-v8a/libmedlc_shared.so" target="libs/release/arm64-v8a/libmedlc_shared.so" />
+        <resource-file src="src/android/libs/debug/arm64-v8a/libtdm-5.4-73-jni.so" target="libs/debug/arm64-v8a/libtdm-5.4-73-jni.so" />
+        <resource-file src="src/android/libs/release/arm64-v8a/libtdm-5.4-73-jni.so" target="libs/release/arm64-v8a/libtdm-5.4-73-jni.so" />
+        
+        <resource-file src="src/android/libs/debug/armeabi-v7a/libLIB-v.3.7.0.so" target="libs/debug/armeabi-v7a/libLIB-v.3.7.0.so" />
+        <resource-file src="src/android/libs/release/armeabi-v7a/libLIB-v.3.7.0.so" target="libs/release/armeabi-v7a/libLIB-v.3.7.0.so" />
+        <resource-file src="src/android/libs/debug/armeabi-v7a/libmedlc_shared.so" target="libs/debug/armeabi-v7a/libmedlc_shared.so" />
+        <resource-file src="src/android/libs/release/armeabi-v7a/libmedlc_shared.so" target="libs/release/armeabi-v7a/libmedlc_shared.so" />
+        <resource-file src="src/android/libs/debug/armeabi-v7a/libtdm-5.4-73-jni.so" target="libs/debug/armeabi-v7a/libtdm-5.4-73-jni.so" />
+        <resource-file src="src/android/libs/release/armeabi-v7a/libtdm-5.4-73-jni.so" target="libs/release/armeabi-v7a/libtdm-5.4-73-jni.so" />
+
+        <resource-file src="src/android/libs/debug/x86/libLIB-v.3.7.0.so" target="libs/debug/x86/libLIB-v.3.7.0.so" />
+        <resource-file src="src/android/libs/release/x86/libLIB-v.3.7.0.so" target="libs/release/x86/libLIB-v.3.7.0.so" />
+        <resource-file src="src/android/libs/debug/x86/libmedlc_shared.so" target="libs/debug/x86/libmedlc_shared.so" />
+        <resource-file src="src/android/libs/release/x86/libmedlc_shared.so" target="libs/release/x86/libmedlc_shared.so" />
+         <resource-file src="src/android/libs/debug/x86/libtdm-5.4-73-jni.so" target="libs/debug/x86/libtdm-5.4-73-jni.so" />
+        <resource-file src="src/android/libs/release/x86/libtdm-5.4-73-jni.so" target="libs/release/x86/libtdm-5.4-73-jni.so" />
+
+        <resource-file src="src/android/libs/debug/x86_64/libmedlc_shared.so" target="libs/debug/x86_64/libmedlc_shared.so" />
+        <resource-file src="src/android/libs/release/x86_64/libmedlc_shared.so" target="libs/release/x86_64/libmedlc_shared.so" />
+        <resource-file src="src/android/libs/debug/x86_64/libtdm-5.4-73-jni.so" target="libs/debug/x86_64/libtdm-5.4-73-jni.so" />
+        <resource-file src="src/android/libs/release/x86_64/libtdm-5.4-73-jni.so" target="libs/release/x86_64/libtdm-5.4-73-jni.so" />
+
+        <resource-file src="src/android/libs/debug/armeabi/libLIB-v.3.7.0.so" target="libs/debug/armeabi/libLIB-v.3.7.0.so" />
+        <resource-file src="src/android/libs/release/armeabi/libLIB-v.3.7.0.so" target="libs/release/armeabi/libLIB-v.3.7.0.so" />
+
+    </platform>
+</plugin>

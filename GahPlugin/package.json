@@ -1,0 +1,16 @@
+{
+    "version": "0.0.1",
+    "name": "gahplugin",
+    "cordova_name": "GahPlugin",
+    "description": "GAH plugin",
+    "license": "Copyright (c) GEMALTO DEVELOPMENT",
+    "author": {
+        "name": "Author",
+        "email": "author@email.com"
+    },
+    "keywords": [
+        "GAH",
+        "plugin"
+    ]
+}
+

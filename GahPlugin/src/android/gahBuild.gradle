@@ -1,0 +1,33 @@
+android {
+    sourceSets {
+        main {
+            debug {
+                jni.srcDirs = []
+                jniLibs.srcDir 'libs/debug'
+            }
+            release {
+                jni.srcDirs = []
+                jniLibs.srcDir 'libs/release'
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:support-v4:24.0.0'
+			
+		// FPP SDK
+    debugCompile files('src/main/libs/debug/GAHRiskEngine.jar')
+    releaseCompile files('src/main/libs/release/GAHRiskEngine.jar')
+			
+		// 3rd party dependencies
+    compile 'commons-codec:commons-codec:1.11'
+    compile 'commons-io:commons-io:2.6'
+    compile 'net.java.dev.jna:jna:4.5.0@aar'
+}
