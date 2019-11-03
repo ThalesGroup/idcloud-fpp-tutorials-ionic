@@ -11,19 +11,19 @@
     "lint": "ionic-app-scripts lint"
   },
   "dependencies": {
-    "@angular/animations": "5.2.11",
-    "@angular/common": "5.2.11",
-    "@angular/compiler": "5.2.11",
-    "@angular/compiler-cli": "5.2.11",
-    "@angular/core": "5.2.11",
-    "@angular/forms": "5.2.11",
-    "@angular/http": "5.2.11",
-    "@angular/platform-browser": "5.2.11",
-    "@angular/platform-browser-dynamic": "5.2.11",
-    "@ionic-native/android-permissions": "^5.13.0",
-    "@ionic-native/core": "^4.15.0",
-    "@ionic-native/splash-screen": "~4.20.0",
-    "@ionic-native/status-bar": "^4.20.0",
+    "@angular/animations": "^7.2.15",
+    "@angular/common": "^7.2.15",
+    "@angular/compiler": "^7.2.15",
+    "@angular/compiler-cli": "^7.2.15",
+    "@angular/core": "^7.2.15",
+    "@angular/forms": "^7.2.15",
+    "@angular/http": "^7.2.15",
+    "@angular/platform-browser": "^7.2.15",
+    "@angular/platform-browser-dynamic": "^7.2.15",
+    "@ionic-native/android-permissions": "^5.16.0",
+    "@ionic-native/core": "^5.16.0",
+    "@ionic-native/splash-screen": "^5.16.0",
+    "@ionic-native/status-bar": "^5.16.0",
     "@ionic/storage": "2.2.0",
     "com.gemalto.plugin.gah": "../GahPlugin",
     "cordova": "^9.0.0",
@@ -39,13 +39,13 @@
     "gahplugin": "file:../GahPlugin",
     "ionic-angular": "3.9.5",
     "ionicons": "3.0.0",
-    "rxjs": "5.5.11",
+    "rxjs": "^6.5.3",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.29"
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@ionic/app-scripts": "^3.2.4",
-    "typescript": "~2.6.2"
+    "typescript": "^3.2.4"
   },
   "description": "An Ionic project",
   "cordova": {
