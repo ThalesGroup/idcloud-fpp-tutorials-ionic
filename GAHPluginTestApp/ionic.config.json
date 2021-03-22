@@ -1,5 +1,7 @@
 {
   "name": "GAHPluginTestApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
