@@ -1,7 +1,0 @@
-{
-  "name": "GahPluginTestApp",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic-angular"
-}
