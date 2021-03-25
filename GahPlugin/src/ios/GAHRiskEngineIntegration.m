@@ -31,6 +31,8 @@
     }
     
     [GAHCore initialize:configObejcts];
+
+    [GAHCore setBehavioSecObject:[BehavioSecIOSSDK sharedIOSSDK]];
 }
 
 -(void)requestVisitID:(id <CDVCommandDelegate>) delegate callbackId:(NSString*) callbackId {

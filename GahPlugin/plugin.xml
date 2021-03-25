@@ -25,6 +25,8 @@
     
         <!-- FPP SDK libraries -->
         <framework src="src/ios/libs/debug/GAHRiskEngine.framework" embed="false" custom="true"/>
+        <framework src="src/ios/libs/debug/ZDetection.framework" embed="true" custom="true"/>
+        <framework src="src/ios/libs/debug/TrustDefender.framework" embed="true" custom="true"/>
         <!-- <framework src="src/ios/libs/release/GAHRiskEngine.framework" embed="false" custom="true"/> -->
         
     </platform>
@@ -62,22 +64,22 @@
         <resource-file src="src/android/libs/release/GAHRiskEngine.jar" target="libs/release/GAHRiskEngine.jar" />
 
         <!-- FPP SDK native libraries -->
-        <resource-file src="src/android/libs/debug/arm64-v8a/libLIB-v.3.7.0.so" target="libs/debug/arm64-v8a/libLIB-v.3.7.0.so" />
-        <resource-file src="src/android/libs/release/arm64-v8a/libLIB-v.3.7.0.so" target="libs/release/arm64-v8a/libLIB-v.3.7.0.so" />
+        <resource-file src="src/android/libs/debug/arm64-v8a/libLIB-v.3.8.2.so" target="libs/debug/arm64-v8a/libLIB-v.3.8.2.so" />
+        <resource-file src="src/android/libs/release/arm64-v8a/libLIB-v.3.8.2.so" target="libs/release/arm64-v8a/libLIB-v.3.8.2.so" />
         <resource-file src="src/android/libs/debug/arm64-v8a/libmedlc_shared.so" target="libs/debug/arm64-v8a/libmedlc_shared.so" />
         <resource-file src="src/android/libs/release/arm64-v8a/libmedlc_shared.so" target="libs/release/arm64-v8a/libmedlc_shared.so" />
         <resource-file src="src/android/libs/debug/arm64-v8a/libtdm-5.4-73-jni.so" target="libs/debug/arm64-v8a/libtdm-5.4-73-jni.so" />
         <resource-file src="src/android/libs/release/arm64-v8a/libtdm-5.4-73-jni.so" target="libs/release/arm64-v8a/libtdm-5.4-73-jni.so" />
         
-        <resource-file src="src/android/libs/debug/armeabi-v7a/libLIB-v.3.7.0.so" target="libs/debug/armeabi-v7a/libLIB-v.3.7.0.so" />
-        <resource-file src="src/android/libs/release/armeabi-v7a/libLIB-v.3.7.0.so" target="libs/release/armeabi-v7a/libLIB-v.3.7.0.so" />
+        <resource-file src="src/android/libs/debug/armeabi-v7a/libLIB-v.3.8.2.so" target="libs/debug/armeabi-v7a/libLIB-v.3.8.2.so" />
+        <resource-file src="src/android/libs/release/armeabi-v7a/libLIB-v.3.8.2.so" target="libs/release/armeabi-v7a/libLIB-v.3.8.2.so" />
         <resource-file src="src/android/libs/debug/armeabi-v7a/libmedlc_shared.so" target="libs/debug/armeabi-v7a/libmedlc_shared.so" />
         <resource-file src="src/android/libs/release/armeabi-v7a/libmedlc_shared.so" target="libs/release/armeabi-v7a/libmedlc_shared.so" />
         <resource-file src="src/android/libs/debug/armeabi-v7a/libtdm-5.4-73-jni.so" target="libs/debug/armeabi-v7a/libtdm-5.4-73-jni.so" />
         <resource-file src="src/android/libs/release/armeabi-v7a/libtdm-5.4-73-jni.so" target="libs/release/armeabi-v7a/libtdm-5.4-73-jni.so" />
 
-        <resource-file src="src/android/libs/debug/x86/libLIB-v.3.7.0.so" target="libs/debug/x86/libLIB-v.3.7.0.so" />
-        <resource-file src="src/android/libs/release/x86/libLIB-v.3.7.0.so" target="libs/release/x86/libLIB-v.3.7.0.so" />
+        <resource-file src="src/android/libs/debug/x86/libLIB-v.3.8.2.so" target="libs/debug/x86/libLIB-v.3.8.2.so" />
+        <resource-file src="src/android/libs/release/x86/libLIB-v.3.8.2.so" target="libs/release/x86/libLIB-v.3.8.2.so" />
         <resource-file src="src/android/libs/debug/x86/libmedlc_shared.so" target="libs/debug/x86/libmedlc_shared.so" />
         <resource-file src="src/android/libs/release/x86/libmedlc_shared.so" target="libs/release/x86/libmedlc_shared.so" />
          <resource-file src="src/android/libs/debug/x86/libtdm-5.4-73-jni.so" target="libs/debug/x86/libtdm-5.4-73-jni.so" />
@@ -87,9 +89,6 @@
         <resource-file src="src/android/libs/release/x86_64/libmedlc_shared.so" target="libs/release/x86_64/libmedlc_shared.so" />
         <resource-file src="src/android/libs/debug/x86_64/libtdm-5.4-73-jni.so" target="libs/debug/x86_64/libtdm-5.4-73-jni.so" />
         <resource-file src="src/android/libs/release/x86_64/libtdm-5.4-73-jni.so" target="libs/release/x86_64/libtdm-5.4-73-jni.so" />
-
-        <resource-file src="src/android/libs/debug/armeabi/libLIB-v.3.7.0.so" target="libs/debug/armeabi/libLIB-v.3.7.0.so" />
-        <resource-file src="src/android/libs/release/armeabi/libLIB-v.3.7.0.so" target="libs/release/armeabi/libLIB-v.3.7.0.so" />
 
     </platform>
 </plugin>
