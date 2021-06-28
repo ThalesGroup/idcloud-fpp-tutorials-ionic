@@ -1,13 +1,17 @@
 android {
+    defaultConfig {
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+    }
+
     sourceSets {
         main {
             debug {
-                jni.srcDirs = []
-                jniLibs.srcDir 'libs/debug'
+                jniLibs.srcDirs += "src/main/libs/debug"
             }
             release {
-                jni.srcDirs = []
-                jniLibs.srcDir 'libs/release'
+                jniLibs.srcDirs += "src/main/libs/release"
             }
         }
     }
@@ -19,15 +23,22 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.android.support:support-v4:24.0.0'
-			
-		// FPP SDK
-    debugCompile files('src/main/libs/debug/GAHRiskEngine.jar')
-    releaseCompile files('src/main/libs/release/GAHRiskEngine.jar')
-			
-		// 3rd party dependencies
-    compile 'commons-codec:commons-codec:1.11'
-    compile 'commons-io:commons-io:2.6'
-    compile 'net.java.dev.jna:jna:4.5.0@aar'
+    implementation "androidx.appcompat:appcompat:1.3.0"
+
+    // FPP SDK
+    debugImplementation files("src/main/libs/debug/GAHRiskEngine.jar")
+    releaseImplementation files("src/main/libs/release/GAHRiskEngine.jar")
+    implementation files("src/main/libs/3pty/TMXProfilingConnections-6.2-97.aar")
+
+    // 3rd party dependencies
+    implementation "net.java.dev.jna:jna:5.5.0@aar"
+
+    //region Extra dependency for BehavioSec
+    // Play Services for Activity Recognition
+    implementation "com.google.android.gms:play-services-location:18.0.0"
+    // SafetyNet for list of harmful apps
+    implementation "com.google.android.gms:play-services-safetynet:17.0.0"
+    // RootBeer lib for root detection
+    implementation "com.scottyab:rootbeer-lib:0.0.8"
+    //endregion
 }

@@ -1,8 +1,8 @@
 package com.gemalto.plugin.gah;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import com.gemalto.riskengine.GAHBSecConfig;
@@ -123,5 +123,7 @@ public class GAHRiskEngineIntegration {
     /**
      * Sets the transaction as critical.
      */
-    public void setTransactionAsCritical() {GAHCore.setTransactionAsCritical();}
+    public void setTransactionAsCritical() {
+        GAHCore.setTransactionAsCritical();
+    }
 }

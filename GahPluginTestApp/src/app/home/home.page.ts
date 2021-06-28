@@ -54,22 +54,31 @@ export class HomePage {
   }
 
   requestPermissions() {
-  this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.READ_PHONE_STATE).then(
+    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.READ_PHONE_STATE).then(
       result => {
         console.log('Has permission?',result.hasPermission);
         if (!result.hasPermission) {
           this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.READ_PHONE_STATE);
         }
-    },      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.READ_PHONE_STATE)
+      },      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.READ_PHONE_STATE)
     );
 
-  this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.ACCESS_FINE_LOCATION).then(
+    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.READ_PHONE_NUMBERS).then(
+      result => {
+        console.log('Has permission?',result.hasPermission);
+        if (!result.hasPermission) {
+          this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.READ_PHONE_NUMBERS);
+        }
+      },      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.READ_PHONE_NUMBERS)
+    );
+
+    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.ACCESS_FINE_LOCATION).then(
       result => {
         console.log('Has permission?',result.hasPermission);
         if (!result.hasPermission) {
           this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.ACCESS_FINE_LOCATION);
         }
-    },      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.ACCESS_FINE_LOCATION)
+      },      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.ACCESS_FINE_LOCATION)
     );
   }
 
